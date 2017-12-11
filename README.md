@@ -1,2 +1,0 @@
-# goodcoder
-parse dict
