@@ -1,19 +1,3 @@
-/***************************************************************************
- * 
- * Copyright (c) 2017 Baidu.com, Inc. All Rights Reserved
- * 
- **************************************************************************/
- 
- 
- 
-/**
- * @file user_type.h
- * @author susidian(susidian@baidu.com)
- * @date 2017/11/08 19:44:33
- * @brief 
- *  
- **/
-
 #ifndef  GOODCODER_SUSIDIAN_C_ID_16575_USER_TYPE_H
 #define  GOODCODER_SUSIDIAN_C_ID_16575_USER_TYPE_H
 
@@ -23,19 +7,19 @@
 #include "util.h"
 
 namespace parser {
-// ÓÃ»§×Ô¶¨ÒåÀàĞÍ
+// ç”¨æˆ·è‡ªå®šä¹‰ç±»å‹
 struct UserType {
-    int column_1; // ×Ö¶Î1
-    int column_2; // ×Ö¶Î2
-    int column_3; // ×Ö¶Î3
+    int column_1; // å­—æ®µ1
+    int column_2; // å­—æ®µ2
+    int column_3; // å­—æ®µ3
 }; 
 
 /**
- * @brief ½âÎöÓÃ»§×Ô¶¨ÒåÀàĞÍ
- * @param string& ´ı×ª»»µÄÀàĞÍ
- * @param const string& ·Ö¸ô·û
- * @param UserType& ½âÎö½á¹û
- * @return SUCCESS ³É¹¦ ÆäËü Ê§°Ü
+ * @brief è§£æç”¨æˆ·è‡ªå®šä¹‰ç±»å‹
+ * @param string& å¾…è½¬æ¢çš„ç±»å‹
+ * @param const string& åˆ†éš”ç¬¦
+ * @param UserType& è§£æç»“æœ
+ * @return SUCCESS æˆåŠŸ å…¶å®ƒ å¤±è´¥
  */  
 RetCode parse_user_type_process(
         const std::string& col_str,
@@ -68,11 +52,11 @@ RetCode parse_user_type_process(
 }
 
 /**
- * @brief ×·¼ÓÓÃ»§×Ô¶¨ÒåÀàĞÍÈÕÖ¾
- * @param string& ÈÕÖ¾
- * @param const string& ·Ö¸ô·û
- * @param UserType& ÓÃ»§×Ô¶¨ÒåÀàĞÍ
- * @return SUCCESS ³É¹¦ ÆäËü Ê§°Ü
+ * @brief è¿½åŠ ç”¨æˆ·è‡ªå®šä¹‰ç±»å‹æ—¥å¿—
+ * @param string& æ—¥å¿—
+ * @param const string& åˆ†éš”ç¬¦
+ * @param UserType& ç”¨æˆ·è‡ªå®šä¹‰ç±»å‹
+ * @return SUCCESS æˆåŠŸ å…¶å®ƒ å¤±è´¥
  */  
 RetCode append_user_type_log(UserType &value, const std::string &sep, std::string &result) {
     std::stringstream str;
@@ -106,6 +90,4 @@ RetCode append_user_type_log(UserType &value, const std::string &sep, std::strin
 
 }
 
-#endif  //GOODCODER_SUSIDIAN_C_ID_16575_USER_TYPE_H
-
-/* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
+#endif  
