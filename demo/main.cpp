@@ -1,19 +1,3 @@
-/***************************************************************************
- * 
- * Copyright (c) 2017 Baidu.com, Inc. All Rights Reserved
- * 
- **************************************************************************/
- 
- 
- 
-/**
- * @file main.cpp
- * @author susidian(com@baidu.com)
- * @date 2017/11/08 20:03:15
- * @brief 
- *  
- **/
-
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -177,7 +161,7 @@ int main(int argc, char *argv[]) {
     std::string format_file("../data/format.txt");
     std::vector<std::string> format_vec;
 
-    // 设置词表文件格式
+    // 脡猫脰脙麓脢卤铆脦脛录镁赂帽脢陆
     if (parser::set_dict_format(format_file, col_num, format_vec) != parser::SUCCESS) {
         return -1;
     }
