@@ -1,19 +1,3 @@
-/***************************************************************************
- * 
- * Copyright (c) 2017 Baidu.com, Inc. All Rights Reserved
- * 
- **************************************************************************/
- 
- 
- 
-/**
- * @file util.h
- * @author susidian(susidian@baidu.com)
- * @date 2017/11/14 14:28:22
- * @brief 
- *  
- **/
-
 #ifndef  GOODCODER_SUSIDIAN_C_ID_16575_UTIL_H
 #define  GOODCODER_SUSIDIAN_C_ID_16575_UTIL_H
 
