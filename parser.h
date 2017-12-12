@@ -1,19 +1,3 @@
-/***************************************************************************
- * 
- * Copyright (c) 2017 Baidu.com, Inc. All Rights Reserved
- * 
- **************************************************************************/
- 
- 
- 
-/**
- * @file parser.h
- * @author susidian(susidian@baidu.com)
- * @date 2017/11/08 15:48:46
- * @brief Í¨ÓÃ´Ê±í½âÎö 
- *  
- **/
-
 #ifndef  GOODCODER_SUSIDIAN_C_ID_16575_PARSER_H
 #define  GOODCODER_SUSIDIAN_C_ID_16575_PARSER_H
 
@@ -36,10 +20,10 @@ public:
 };
 
 /**
- * @brief ½âÎöÄÚÖÃÀàĞÍ
- * @param string& ´ı×ª»»µÄÀàĞÍ
- * @param T& ½âÎö½á¹û 
- * @return SUCCESS ³É¹¦  ÆäËü Ê§°Ü
+ * @brief è§£æå†…ç½®ç±»å‹
+ * @param string& å¾…è½¬æ¢çš„ç±»å‹
+ * @param T& è§£æç»“æœ 
+ * @return SUCCESS æˆåŠŸ  å…¶å®ƒ å¤±è´¥
  */  
 template <typename T>
 RetCode DictParse::parse(const std::string& col_str, T& value) {
@@ -58,10 +42,10 @@ RetCode DictParse::parse(const std::string& col_str, T& value) {
 }
 
 /**
- * @brief Ä£°åÌØ»¯£¬½âÎö×Ö·û´®
- * @param string& ´ı×ª»»µÄÀàĞÍ
- * @param T& ½âÎö½á¹û
- * @return SUCCESS ³É¹¦ ÆäËü Ê§°Ü
+ * @brief æ¨¡æ¿ç‰¹åŒ–ï¼Œè§£æå­—ç¬¦ä¸²
+ * @param string& å¾…è½¬æ¢çš„ç±»å‹
+ * @param T& è§£æç»“æœ
+ * @return SUCCESS æˆåŠŸ å…¶å®ƒ å¤±è´¥
  */  
 template<>
 RetCode DictParse::parse(const std::string& col_str, char*& value) {
@@ -77,11 +61,11 @@ RetCode DictParse::parse(const std::string& col_str, char*& value) {
 }
 
 /**
- * @brief ÖØÔØº¯Êı£¬½âÎöĞÎÈçnum:item1,item2,item3µÄÊı×é
- * @param string& ´ı×ª»»µÄÀàĞÍ
- * @param const string& ·Ö¸ô·û
- * @param vector<T>& ½âÎö½á¹ûvector
- * @return SUCCESS ³É¹¦ ÆäËü Ê§°Ü
+ * @brief é‡è½½å‡½æ•°ï¼Œè§£æå½¢å¦‚num:item1,item2,item3çš„æ•°ç»„
+ * @param string& å¾…è½¬æ¢çš„ç±»å‹
+ * @param const string& åˆ†éš”ç¬¦
+ * @param vector<T>& è§£æç»“æœvector
+ * @return SUCCESS æˆåŠŸ å…¶å®ƒ å¤±è´¥
  */  
 template <typename T>
 RetCode DictParse::parse(const std::string& col_str,
