@@ -1,4 +1,6 @@
 #include <iostream>
+#include <xmmintrin.h>
+#include <pmmintrin.h>
 #include <string>
 #include <fstream>
 #include <vector>
@@ -137,35 +139,46 @@ bool parse_line(const std::string &line,
 }
 
 int main(int argc, char *argv[]) {
-    std::string dict_file;
+    MM_SET_FLUSH_ZERO_MODE(_MM_FLUSH_ZERO_ON);
+    MM_SET_DENORMALS_ZERO_MODE(_MM_DENORMALS_ZERO_ON);
+
+    std::string dict_file, format_file;
     opterr = 0;
-    switch (getopt(argc, argv, "f:h")) {
-    case 'f':
-        dict_file = optarg;
-        break;
-    case 'h':
-        std::cout << "usage: ./demo -f dict_file" << std::endl;
-        break;
-    case -1:
-        std::cout << "usage: ./demo -f dict_file" << std::endl;
-        break;
-    case '?':
-        std::cout << "usage: ./demo -f dict_file" << std::endl;
-        break;
-    default:
-        std::cout << "usage: ./demo -f dict_file" << std::endl;
-        break;
-    } 
+    int ch;
+    while ((ch = getopt(argc, argv, "f:h:t")) != -1) {
+        printf("optind: %d\n", optind);
+        switch (ch) {
+            case 'f':
+                printf("have option -f\n");
+                dict_file = optarg;
+                break;
+            case 'h':
+                printf("have option -h\n");
+                printf("usage: ./demo -f dict_file -t format_file");
+                return 0;
+            case 't':
+                printf("have option -h\n");
+                format_file = optarg;
+                break;
+            case '?':
+                printf("unknown option %c\n", (char)optopt);
+                printf("usage: ./demo -f dict_file -t format_file");
+                return 0;
+            default:
+                printf("unknown option %c\n", (char)optopt);
+                printf("usage: ./demo -f dict_file -t format_file");
+                return 0;
+        }
+    }
 
     size_t col_num = 0;
-    std::string format_file("../data/format.txt");
     std::vector<std::string> format_vec;
 
     // ÉèÖÃ´Ê±íÎÄ¼þ¸ñÊ½
     if (parser::set_dict_format(format_file, col_num, format_vec) != parser::SUCCESS) {
         return -1;
     }
-    
+
     if (dict_file.empty() || col_num <= 0 || format_vec.empty()) {
         return -1;
     }
@@ -182,5 +195,3 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
-
-/* vim: set expandtab ts=4 sw=4 sts=4 tw=100: */
